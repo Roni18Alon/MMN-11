@@ -13,9 +13,8 @@ int main()
 	while (ch!= EOF) 							/*end of input*/
 	{
 		if (isdigit(ch) != 0)
-		{
-		  startOfSen = 0;						/*the char is a digit, hence next chart wont starts a sentence*/
-		}		
+		  	startOfSen = 0;						/*the char is a digit, hence next chart wont starts a sentence*/
+				
 		else 								/*not a digit, make additional checks*/
 		{ 	
 			if (isspace(ch) == 0)					/*if the char is a whitespace (!=0), print it and move to next char*/
@@ -35,18 +34,18 @@ int main()
 			}
 		putchar(ch);							/*prints the char*/
 		if (ch =='.' && inQuote == 0) 
-			 {startOfSen = 1; }					/*a start of a sentence*/
+			 startOfSen = 1; 					/*a start of a sentence*/
 		
-		if (ch =='"' && inQuote == 0) 
-			 {inQuote = 1; }					/*change status in a quote*/
-	
-		else { if (ch =='"' && inQuote == 1)				/*change status out of quote*/
-			inQuote = 0; 
-			}						
-		
-		}			
+		else{ if (ch =='"' && inQuote == 0) 
+				 inQuote = 1; 					/*change status in a quote*/
+				else if (ch =='"' && inQuote == 1) 				/*change status out of quote*/			
+				inQuote = 0;
+						
+			}
+	}			
 		ch = getchar();	 						/*check the next char*/
 	
 	}
 	return 0;
 }
+
