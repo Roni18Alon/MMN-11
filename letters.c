@@ -37,12 +37,12 @@ int main()
 		if (ch =='.' && inQuote == 0) 
 			 {startOfSen = 1; }					/*a start of a sentence*/
 		
-		if (ch =='"' && inQuote == 0) 
+		else if (ch =='"' && inQuote == 0) 
 			 {inQuote = 1; }					/*change status in a quote*/
 	
-		else { if (ch =='"' && inQuote == 1)				/*change status out of quote*/
+		else if (ch =='"' && inQuote == 1)				/*change status out of quote*/
 			inQuote = 0; 
-			}						
+									
 		
 		}			
 		ch = getchar();	 						/*check the next char*/
